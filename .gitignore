@@ -1,2 +1,15 @@
+# Python cache and compiled files
 **/__pycache__
+
+# Rasa files
 **/.rasa
+
+# Virtual environment
+venv/
+
+# Log files
+logs/
+
+# OS generated files
+.DS_Store
+Thumbs.db
