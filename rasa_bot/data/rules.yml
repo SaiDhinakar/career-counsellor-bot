@@ -1,0 +1,93 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Greet user
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Handle great mood
+  steps:
+  - intent: mood_great
+  - action: utter_mood_great
+
+- rule: Handle unhappy mood
+  steps:
+  - intent: mood_unhappy
+  - action: utter_mood_unhappy
+
+- rule: Tech careers info
+  steps:
+  - intent: ask_tech_careers
+  - action: utter_tech_careers
+
+- rule: Arts careers info
+  steps:
+  - intent: ask_arts_careers
+  - action: utter_arts_careers
+
+- rule: Commerce careers info
+  steps:
+  - intent: ask_commerce_careers
+  - action: utter_commerce_careers
+
+- rule: Science careers info
+  steps:
+  - intent: ask_science_careers
+  - action: utter_science_careers
+
+- rule: Healthcare careers info
+  steps:
+  - intent: ask_healthcare_careers
+  - action: utter_healthcare_careers
+
+- rule: Education careers info
+  steps:
+  - intent: ask_education_careers
+  - action: utter_education_careers
+
+- rule: Skills assessment help
+  steps:
+  - intent: ask_skills_assessment
+  - action: utter_skills_assessment
+
+- rule: Salary information
+  steps:
+  - intent: ask_salary_info
+  - action: utter_salary_info
+
+- rule: Job requirements
+  steps:
+  - intent: ask_job_requirements
+  - action: utter_job_requirements
+
+- rule: General career advice
+  steps:
+  - intent: ask_career_advice
+  - action: utter_ask_career_field
+
+- rule: Submit interest form
+  condition:
+  - active_loop: interest_form
+  steps:
+  - action: interest_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_recommend_career
+
+- rule: Direct career recommendation
+  steps:
+  - intent: provide_interests
+  - action: action_recommend_career

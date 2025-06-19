@@ -1,0 +1,106 @@
+version: "3.1"
+
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_career_advice
+  - action: utter_ask_career_field
+
+- story: greet and ask tech careers
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_tech_careers
+  - action: utter_tech_careers
+  - intent: ask_salary_info
+  - action: utter_salary_info
+
+- story: arts career inquiry
+  steps:
+  - intent: ask_arts_careers
+  - action: utter_arts_careers
+  - intent: ask_job_requirements
+  - action: utter_job_requirements
+
+- story: commerce career path
+  steps:
+  - intent: ask_commerce_careers
+  - action: utter_commerce_careers
+  - intent: affirm
+  - action: utter_ask_interests
+
+- story: science career exploration
+  steps:
+  - intent: ask_science_careers
+  - action: utter_science_careers
+  - intent: ask_skills_assessment
+  - action: utter_skills_assessment
+
+- story: healthcare career guidance
+  steps:
+  - intent: ask_healthcare_careers
+  - action: utter_healthcare_careers
+  - intent: provide_interests
+  - action: action_recommend_career
+
+- story: education career consultation
+  steps:
+  - intent: ask_education_careers
+  - action: utter_education_careers
+  - intent: ask_salary_info
+  - action: utter_salary_info
+
+- story: skills assessment flow
+  steps:
+  - intent: ask_skills_assessment
+  - action: utter_skills_assessment
+  - intent: affirm
+  - action: utter_ask_interests
+
+- story: interests collection
+  steps:
+  - intent: provide_interests
+  - action: action_recommend_career
+  - intent: ask_job_requirements
+  - action: utter_job_requirements
+
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: mood tracking - happy
+  steps:
+  - intent: mood_great
+  - action: utter_mood_great
+  - intent: ask_career_advice
+  - action: utter_ask_career_field
+
+- story: mood tracking - sad
+  steps:
+  - intent: mood_unhappy
+  - action: utter_mood_unhappy
+  - intent: ask_career_advice
+  - action: utter_ask_career_field
+
+- story: comprehensive career consultation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_career_advice
+  - action: utter_ask_career_field
+  - intent: ask_tech_careers
+  - action: utter_tech_careers
+  - intent: ask_salary_info
+  - action: utter_salary_info
+  - intent: ask_job_requirements
+  - action: utter_job_requirements
+  - intent: goodbye
+  - action: utter_goodbye

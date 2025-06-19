@@ -1,0 +1,276 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - thank you goodbye
+    - thanks bye
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yes please
+    - sure
+    - absolutely
+    - definitely
+    - agreed
+    - right
+    - exactly
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+    - no thanks
+    - not interested
+    - I disagree
+    - not for me
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - excellent
+    - fantastic
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - confused
+    - lost
+    - stressed
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - what are you?
+    - who are you?
+    - are you artificial intelligence?
+    - are you AI?
+
+- intent: ask_career_advice
+  examples: |
+    - I need career advice
+    - help me choose a career
+    - what career should I pursue
+    - I'm confused about my career
+    - career guidance please
+    - suggest a career for me
+    - what job is right for me
+    - career counseling
+    - I need help with career planning
+    - what should I do with my life
+    - career options
+    - job suggestions
+
+- intent: ask_tech_careers
+  examples: |
+    - tell me about technology careers
+    - what are the tech jobs available
+    - I want to work in technology
+    - tech career options
+    - software jobs
+    - programming careers
+    - IT careers
+    - computer science jobs
+    - technology field
+    - coding careers
+    - what can I do in tech
+    - AI careers
+    - data science jobs
+
+- intent: ask_arts_careers
+  examples: |
+    - tell me about creative careers
+    - art jobs
+    - creative field opportunities
+    - I want to work in arts
+    - design careers
+    - writing jobs
+    - media careers
+    - entertainment industry
+    - graphic design jobs
+    - photography careers
+    - music industry jobs
+    - creative writing careers
+
+- intent: ask_commerce_careers
+  examples: |
+    - business careers
+    - commerce field jobs
+    - finance careers
+    - marketing jobs
+    - sales careers
+    - management positions
+    - business administration
+    - accounting jobs
+    - economics careers
+    - MBA careers
+    - corporate jobs
+    - entrepreneurship
+
+- intent: ask_science_careers
+  examples: |
+    - science careers
+    - research jobs
+    - laboratory work
+    - scientific careers
+    - biology jobs
+    - chemistry careers
+    - physics jobs
+    - research scientist
+    - biotechnology careers
+    - environmental science
+    - medical research
+
+- intent: ask_healthcare_careers
+  examples: |
+    - healthcare careers
+    - medical jobs
+    - doctor careers
+    - nursing jobs
+    - healthcare field
+    - medical field opportunities
+    - health services
+    - hospital jobs
+    - pharmacy careers
+    - therapy jobs
+    - psychology careers
+    - dentistry
+
+- intent: ask_education_careers
+  examples: |
+    - teaching careers
+    - education field
+    - professor jobs
+    - academic careers
+    - training jobs
+    - educational roles
+    - school jobs
+    - university positions
+    - curriculum development
+    - educational consulting
+
+- intent: ask_skills_assessment
+  examples: |
+    - how do I assess my skills
+    - what are my strengths
+    - skill evaluation
+    - how to know my abilities
+    - career assessment
+    - what am I good at
+    - skill analysis
+    - talent identification
+    - how to find my skills
+    - capability assessment
+
+- intent: ask_salary_info
+  examples: |
+    - what is the salary
+    - how much do they earn
+    - salary information
+    - pay scale
+    - compensation details
+    - earning potential
+    - income expectations
+    - how much money
+    - salary range
+    - what do they pay
+
+- intent: ask_job_requirements
+  examples: |
+    - what are the requirements
+    - job qualifications needed
+    - what skills are required
+    - education requirements
+    - experience needed
+    - prerequisites for the job
+    - what do I need to qualify
+    - entry requirements
+    - job criteria
+
+- intent: provide_interests
+  examples: |
+    - I like [working with computers](interest_area)
+    - I enjoy [helping people](interest_area)
+    - I'm interested in [art and design](interest_area)
+    - I love [solving problems](interest_area)
+    - I like [working with numbers](interest_area)
+    - I enjoy [reading and writing](interest_area)
+    - I'm passionate about [science](interest_area)
+    - I like [music and entertainment](interest_area)
+    - I enjoy [traveling](interest_area)
+    - I like [sports and fitness](interest_area)
+    - My interests include programming
+    - I love creative work
+    - I enjoy analytical tasks
+    - I like teamwork
+    - I prefer working alone
+    - I enjoy leadership roles
+    - I like research work
+    - I enjoy teaching others

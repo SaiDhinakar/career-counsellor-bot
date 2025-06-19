@@ -1,0 +1,222 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_career_advice
+  - ask_tech_careers
+  - ask_arts_careers
+  - ask_commerce_careers
+  - ask_science_careers
+  - ask_healthcare_careers
+  - ask_education_careers
+  - ask_skills_assessment
+  - ask_salary_info
+  - ask_job_requirements
+  - provide_interests
+
+entities:
+  - career_field
+  - skill_level
+  - experience_level
+  - interest_area
+
+slots:
+  career_field:
+    type: categorical
+    values:
+      - technology
+      - arts
+      - commerce
+      - science
+      - healthcare
+      - education
+    mappings:
+    - type: from_entity
+      entity: career_field
+  
+  user_interests:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: interest_form
+        requested_slot: user_interests
+
+  skill_level:
+    type: categorical
+    values:
+      - beginner
+      - intermediate
+      - advanced
+    mappings:
+    - type: from_entity
+      entity: skill_level
+
+  experience_level:
+    type: categorical
+    values:
+      - entry_level
+      - mid_level
+      - senior_level
+    mappings:
+    - type: from_entity
+      entity: experience_level
+
+responses:
+  utter_greet:
+  - text: "Hello! I'm your AI Career Counsellor. I'm here to help you discover amazing career opportunities based on your interests and skills. How can I assist you today?"
+  
+  utter_goodbye:
+  - text: "Goodbye! Remember, your career journey is unique. Keep exploring, learning, and following your passions. Good luck!"
+  
+  utter_iamabot:
+  - text: "I am an AI Career Counsellor bot, powered by natural language processing. I'm here to help you explore career paths and make informed decisions about your future!"
+
+  utter_mood_great:
+  - text: "That's wonderful! A positive attitude is a great asset in career development. How can I help you channel that energy into finding the perfect career path?"
+
+  utter_mood_unhappy:
+  - text: "I'm sorry to hear that. Career decisions can be overwhelming, but I'm here to help make the process easier. Let's work together to find opportunities that excite you!"
+
+  utter_ask_career_field:
+  - text: "What field are you most interested in? I can help with:
+           🖥️ Technology (Software, AI, Cybersecurity)
+           🎨 Arts & Creative (Design, Writing, Media)
+           💼 Commerce & Business (Finance, Marketing, Management)
+           🔬 Science & Research (Biology, Chemistry, Physics)
+           🏥 Healthcare (Medicine, Nursing, Therapy)
+           📚 Education (Teaching, Training, Academia)"
+
+  utter_tech_careers:
+  - text: "Technology offers exciting opportunities! Here are some popular tech careers:
+           
+           💻 **Software Developer** - Build applications and websites
+           🤖 **AI/ML Engineer** - Create intelligent systems
+           🛡️ **Cybersecurity Specialist** - Protect digital assets
+           📊 **Data Scientist** - Analyze data for insights
+           🌐 **Web Developer** - Create web experiences
+           📱 **Mobile App Developer** - Build mobile applications
+           
+           Which area interests you most? I can provide more specific guidance!"
+
+  utter_arts_careers:
+  - text: "The creative field is full of possibilities! Here are some exciting arts careers:
+           
+           🎨 **Graphic Designer** - Create visual communications
+           ✍️ **Content Writer** - Craft compelling stories
+           🎬 **Video Producer** - Create multimedia content
+           🎵 **Music Producer** - Create and arrange music
+           📸 **Photographer** - Capture moments and stories
+           🎭 **Theater Arts** - Perform and entertain
+           
+           What type of creative work speaks to you?"
+
+  utter_commerce_careers:
+  - text: "Business and commerce offer diverse opportunities! Here are some key areas:
+           
+           💰 **Financial Analyst** - Analyze investments and markets
+           📈 **Marketing Manager** - Promote products and brands
+           👥 **Human Resources** - Manage people and culture
+           📊 **Business Analyst** - Improve business processes
+           🛒 **Sales Manager** - Drive revenue growth
+           🏢 **Operations Manager** - Optimize business operations
+           
+           Which business area interests you most?"
+
+  utter_science_careers:
+  - text: "Science careers are at the forefront of discovery! Here are some exciting options:
+           
+           🧬 **Biotechnologist** - Apply biology to solve problems
+           🔬 **Research Scientist** - Conduct scientific research
+           🧪 **Laboratory Technician** - Support scientific research
+           🌱 **Environmental Scientist** - Study and protect the environment
+           💊 **Pharmaceutical Researcher** - Develop new medicines
+           ⚛️ **Physics Researcher** - Study fundamental properties of matter
+           
+           What scientific field fascinates you?"
+
+  utter_healthcare_careers:
+  - text: "Healthcare is a rewarding field focused on helping others! Here are some career paths:
+           
+           👩‍⚕️ **Doctor/Physician** - Diagnose and treat patients
+           👩‍⚕️ **Registered Nurse** - Provide patient care
+           🦷 **Dentist** - Oral health specialist
+           💊 **Pharmacist** - Medication expert
+           🧠 **Psychologist** - Mental health professional
+           🏃‍♀️ **Physical Therapist** - Help patients recover mobility
+           
+           Which area of healthcare appeals to you?"
+
+  utter_education_careers:
+  - text: "Education shapes the future! Here are some fulfilling education careers:
+           
+           👩‍🏫 **Teacher** - Educate and inspire students
+           👨‍💼 **Corporate Trainer** - Develop employee skills
+           📚 **Curriculum Developer** - Design educational content
+           🎓 **Academic Researcher** - Advance knowledge in your field
+           👥 **Educational Consultant** - Improve educational systems
+           💻 **Online Course Creator** - Develop digital learning experiences
+           
+           What aspect of education interests you?"
+
+  utter_ask_interests:
+  - text: "To give you the best career recommendations, could you tell me about your interests, hobbies, or activities you enjoy? For example: problem-solving, working with people, creating things, analyzing data, helping others, etc."
+
+  utter_skills_assessment:
+  - text: "Great question! Here's a quick skills assessment approach:
+           
+           🔍 **Identify your strengths**: What do people often ask for your help with?
+           📚 **List your experience**: What have you learned through work, study, or hobbies?
+           💡 **Consider transferable skills**: Communication, leadership, problem-solving
+           🎯 **Take online assessments**: Try platforms like 16Personalities or StrengthsFinder
+           
+           What skills do you feel most confident about?"
+
+  utter_salary_info:
+  - text: "Salary varies by location, experience, and company. Here are some general ranges:
+           
+           💻 **Tech**: $60k-$200k+ (varies widely by role)
+           🎨 **Creative**: $35k-$100k+ (freelance can vary greatly)
+           💼 **Business**: $45k-$150k+ (management roles higher)
+           🔬 **Science**: $50k-$120k+ (research roles)
+           🏥 **Healthcare**: $50k-$300k+ (doctors earn more)
+           📚 **Education**: $35k-$80k+ (higher education pays more)
+           
+           Remember: passion and growth potential matter too!"
+
+  utter_job_requirements:
+  - text: "Job requirements typically include:
+           
+           🎓 **Education**: Degree requirements vary by field
+           💼 **Experience**: Entry-level to senior positions
+           🛠️ **Technical Skills**: Specific to your field
+           🤝 **Soft Skills**: Communication, teamwork, leadership
+           📜 **Certifications**: Often helpful or required
+           
+           Which specific role would you like to know more about?"
+
+  utter_default:
+  - text: "I'm not sure I understand. Could you rephrase that? I'm here to help with career advice, job information, and guidance on different career fields."
+
+  utter_ask_user_interests:
+  - text: "What are your main interests or hobbies? This will help me suggest the best career paths for you."
+
+forms:
+  interest_form:
+    required_slots:
+    - user_interests
+
+actions:
+  - action_recommend_career
+  - action_provide_career_details
+  - validate_interest_form
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
