@@ -352,43 +352,6 @@ The recommendation engine includes:
 
 Follow the Quick Start guide above for local development setup.
 
-### Production Deployment
-
-1. **Docker Containerization** (Recommended)
-2. **Cloud Platforms**: AWS, Google Cloud, Azure
-3. **Heroku Deployment** for quick prototyping
-4. **Kubernetes** for scalable deployment
-
-### Environment Variables
-
-```bash
-RASA_SERVER_URL=http://localhost:5005
-ACTION_SERVER_URL=http://localhost:5055
-STREAMLIT_SERVER_PORT=8501
-```
-
-## 🧪 Testing
-
-### Manual Testing
-
-1. [ ] Start all services as described in Quick Start
-2. [ ] Test various conversation flows:
-    - [ ] Career recommendations
-    - [ ] Skills assessment
-    - [ ] Salary inquiries
-    - [ ] Different career fields
-
-### Automated Testing
-
-```bash
-# Test Rasa model
-cd rasa_bot
-rasa test
-
-# Test custom actions
-python -m pytest actions/test_actions.py
-```
-
 ## 🤝 Contributing
 
 We welcome contributions! Please follow these steps:
