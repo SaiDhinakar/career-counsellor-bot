@@ -9,8 +9,6 @@
 
 An intelligent AI-powered Virtual Career Counsellor built with **Rasa Framework** that provides personalized career guidance, recommendations, and advice based on user interests, skills, and career goals. The system combines Natural Language Processing (NLP) with machine learning to deliver comprehensive career counseling services through an intuitive web interface.
 
-### 🚀 **Live Demo**: [Your Deployed App URL Here - Placeholder]
-
 ## ✨ Key Features
 
 ### 🤖 **Intelligent Conversational AI**
@@ -78,33 +76,84 @@ AI Virtual Career Counsellor
 - Python 3.9+
 - pip package manager
 
-### 1. Clone the Repository
+### Option A: Automated Setup (Recommended)
+
+**1. Clone the Repository**
 
 ```bash
 git clone <repository-url>
 cd career-counsellor-bot
 ```
 
-### 2. Install Dependencies
+**2. Run Setup Script**
+
+**Linux/macOS:**
+
+```bash
+./scripts/setup.sh
+```
+
+**Windows:**
+
+```batch
+scripts\setup.bat
+```
+
+The setup script will automatically:
+
+- ✅ Create a Python virtual environment (`venv/`)
+- ✅ Install all Python dependencies
+- ✅ Download required NLTK data
+- ✅ Train the Rasa model
+- ✅ Create necessary directories
+
+**3. Start All Services**
+
+**Linux/macOS:**
+
+```bash
+./scripts/start_services.sh
+```
+
+**Windows:**
+
+```batch
+scripts\start_services.bat
+```
+
+**4. Access the Application**
+Open your browser and navigate to: `http://localhost:8501`
+
+### Option B: Manual Setup
+
+**1. Clone the Repository**
+
+```bash
+git clone <repository-url>
+cd career-counsellor-bot
+```
+
+**2. Install Dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Download NLTK Data
+**3. Download NLTK Data**
 
-```python
+```bash
 python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk.download('wordnet')"
 ```
 
-### 4. Train the Rasa Model
+**4. Train the Rasa Model**
 
 ```bash
 cd rasa_bot
 rasa train
+cd ..
 ```
 
-### 5. Start the Services
+**5. Start the Services**
 
 **Terminal 1 - Start Rasa Action Server:**
 
@@ -127,15 +176,62 @@ cd streamlit_app
 streamlit run app.py
 ```
 
-### 6. Access the Application
+**6. Access the Application**
 
 Open your browser and navigate to: `http://localhost:8501`
+
+## 🛠️ Service Management
+
+### Check Service Status
+
+**Linux/macOS:**
+
+```bash
+./scripts/check_services.sh
+```
+
+**Windows:**
+
+```batch
+scripts\check_services.bat
+```
+
+### Stop All Services
+
+**Linux/macOS:**
+
+```bash
+./scripts/stop_services.sh
+```
+
+**Windows:**
+
+```batch
+scripts\stop_services.bat
+```
+
+### Restart Services
+
+**Linux/macOS:**
+
+```bash
+./scripts/stop_services.sh
+./scripts/start_services.sh
+```
+
+**Windows:**
+
+```batch
+scripts\stop_services.bat
+scripts\start_services.bat
+```
 
 ## 📁 Project Structure
 
 ```
 career-counsellor-bot/
 ├── 📄 README.md                    # Project documentation
+├── 📄 LICENSE                      # MIT License
 ├── 📋 requirements.txt             # Python dependencies
 ├── 🚫 .gitignore                   # Git ignore rules
 │
@@ -159,9 +255,24 @@ career-counsellor-bot/
 ├── 🎨 streamlit_app/               # Web interface
 │   └── 📄 app.py                   # Streamlit application
 │
-└── 📚 src/                         # Additional modules
-    ├── 📄 career_engine.py         # Career recommendation logic
-    └── 📄 analytics.py             # Analytics and insights
+├── 🛠️ scripts/                     # Automation scripts
+│   ├── 📄 setup.sh                 # Linux/macOS setup script
+│   ├── 📄 setup.bat                # Windows setup script
+│   ├── 📄 start_services.sh        # Linux/macOS service starter
+│   ├── 📄 start_services.bat       # Windows service starter
+│   ├── 📄 stop_services.sh         # Linux/macOS service stopper
+│   ├── 📄 stop_services.bat        # Windows service stopper
+│   ├── 📄 check_services.sh        # Linux/macOS service checker
+│   └── 📄 check_services.bat       # Windows service checker
+│
+├── 📚 src/                         # Additional modules
+│   ├── 📄 career_engine.py         # Career recommendation logic
+│   └── 📄 analytics.py             # Analytics and insights
+│
+└── 📁 logs/                        # Runtime logs (created automatically)
+    ├── 📄 actions.log              # Action server logs
+    ├── 📄 rasa.log                 # Rasa server logs
+    └── 📄 streamlit.log            # Streamlit app logs
 ```
 
 ## 🔧 Configuration
@@ -287,13 +398,6 @@ We welcome contributions! Please follow these steps:
 3. **Commit changes**: `git commit -m 'Add amazing feature'`
 4. **Push to branch**: `git push origin feature/amazing-feature`
 5. **Open a Pull Request**
-
-### Development Guidelines
-
-- Follow PEP 8 style guidelines
-- Add comprehensive docstrings
-- Include unit tests for new features
-- Update documentation for significant changes
 
 ### Training Statistics
 
