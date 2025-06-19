@@ -3,13 +3,30 @@
 # AI Virtual Career Counsellor - Service Startup Script
 # This script starts all required services for the application
 
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+
+# Change to project root directory
+cd "$PROJECT_ROOT"
+
 echo "🎯 Starting AI Virtual Career Counsellor Services..."
 echo "=================================================="
+
+# Check if virtual environment exists and activate it
+if [ -d "venv" ]; then
+    echo "🔄 Activating virtual environment..."
+    source venv/bin/activate
+    echo "✅ Virtual environment activated"
+else
+    echo "⚠️  No virtual environment found. Running with system Python."
+    echo "💡 Run './scripts/setup.sh' to create a virtual environment."
+fi
 
 # Check if required directories exist
 if [ ! -d "rasa_bot" ]; then
     echo "❌ Error: rasa_bot directory not found!"
-    echo "Make sure you're running this script from the project root directory."
+    echo "Make sure you're running this script from the correct location."
     exit 1
 fi
 
@@ -79,7 +96,7 @@ echo "   • Action Server: logs/actions.log"
 echo "   • Rasa Server:   logs/rasa.log"
 echo "   • Streamlit App: logs/streamlit.log"
 echo ""
-echo "🛑 To stop all services, run: ./stop_services.sh"
-echo "📊 To check service status, run: ./check_services.sh"
+echo "🛑 To stop all services, run: ./scripts/stop_services.sh"
+echo "📊 To check service status, run: ./scripts/check_services.sh"
 echo ""
 echo "🎉 Happy Career Counselling!"

@@ -3,6 +3,13 @@
 # AI Virtual Career Counsellor - Service Status Check Script
 # This script checks the status of all services
 
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+
+# Change to project root directory
+cd "$PROJECT_ROOT"
+
 echo "📊 AI Virtual Career Counsellor - Service Status"
 echo "=============================================="
 
@@ -64,7 +71,7 @@ fi
 
 echo ""
 echo "🔧 Useful Commands:"
-echo "   • Start services: ./start_services.sh"
-echo "   • Stop services:  ./stop_services.sh"
+echo "   • Start services: ./scripts/start_services.sh"
+echo "   • Stop services:  ./scripts/stop_services.sh"
 echo "   • View logs:      tail -f logs/[service].log"
 echo "   • Check ports:    lsof -i :5005 -i :5055 -i :8501"

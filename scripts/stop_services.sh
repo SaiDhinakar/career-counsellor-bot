@@ -3,6 +3,13 @@
 # AI Virtual Career Counsellor - Service Stop Script
 # This script stops all running services
 
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+
+# Change to project root directory
+cd "$PROJECT_ROOT"
+
 echo "🛑 Stopping AI Virtual Career Counsellor Services..."
 echo "=================================================="
 
